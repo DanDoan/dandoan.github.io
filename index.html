@@ -1,241 +1,544 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Daniel Doan</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	</head>
-	<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daniel Doan — Engineering Manager</title>
+  <meta name="description" content="Engineering Manager at Wayve. Autonomous vehicles, firmware validation, and real estate investing." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#intro">int main()</a></li>
-							<li><a href="#one">def whoAmI</a></li>
-							<li><a href="#two">Work Experience</a></li>
-							<li><a href="#three">Get in touch</a></li>
-						</ul>
-					</nav>
-				</div>
-			</section>
+    :root {
+      --bg:      #0d0f12;
+      --bg2:     #13161b;
+      --bg3:     #1a1e25;
+      --border:  rgba(255,255,255,0.08);
+      --border2: rgba(255,255,255,0.14);
+      --text:    #e8eaed;
+      --muted:   #8b929e;
+      --accent:  #4f8ef7;
+      --green:   #2dd4a0;
+      --font:    system-ui, -apple-system, 'Segoe UI', sans-serif;
+    }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
-							<h1>Daniel Doan</h1>
-							<p>Just a little bit about my skill set up-front:</p>
-                            <section>
-                                <div class="table-wrapper">
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th>Skill</th>
-                                                <th>Level of Expertise</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Python & Automation</td>
-                                                <td>
-                                                    <div class="Progress">
-                                                        <span class="Progress-label" id="Progress-id">Average: 95%</span>
-                                                        <progress max="100" value="85" class="Progress-main" aria-labelledby="Progress-id">
-                                                            <div class="Progress-bar" role="presentation">
-                                                                <span class="Progress-value" style="width: 80%;">&nbsp;</span>
-                                                            </div>
-                                                        </progress>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>C / C++ / Embedded Systems</td>
-                                                <td>
-                                                    <div class="Progress">
-                                                        <span class="Progress-label" id="Progress-id">Average: 0x01000001</span>
-                                                        <progress max="100" value="65" class="Progress-main" aria-labelledby="Progress-id">
-                                                            <div class="Progress-bar" role="presentation">
-                                                                <span class="Progress-value" style="width: 80%;">&nbsp;</span>
-                                                            </div>
-                                                        </progress>
-                                                    </div>
-                                                </td>
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: var(--font); font-size: 16px; line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-                                            </tr>
-                                            <tr>
-                                                <td>Data Structures / Algorithms</td>
-                                                <td>
-                                                <div class="Progress">
-                                                    <span class="Progress-label" id="Progress-id">Average: 70%</span>
-                                                    <progress max="100" value="70" class="Progress-main" aria-labelledby="Progress-id">
-                                                        <div class="Progress-bar" role="presentation">
-                                                            <span class="Progress-value" style="width: 80%;">&nbsp;</span>
-                                                        </div>
-                                                    </progress>
-                                                </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>PHP / Databases</td>
-                                                <td>
-                                                    <div class="Progress">
-                                                        <span class="Progress-label" id="Progress-id">DELETE DATABASE *</span>
-                                                        <progress max="100" value="50" class="Progress-main" aria-labelledby="Progress-id">
-                                                            <div class="Progress-bar" role="presentation">
-                                                                <span class="Progress-value" style="width: 80%;">&nbsp;</span>
-                                                            </div>
-                                                        </progress>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>HTML / CSS</td>
-                                                <td>
-                                                    <div class="Progress">
-                                                        <span class="Progress-label" id="Progress-id">Average: 45%</span>
-                                                        <progress max="100" value="45" class="Progress-main" aria-labelledby="Progress-id">
-                                                            <div class="Progress-bar" role="presentation">
-                                                                <span class="Progress-value" style="width: 80%;">&nbsp;</span>
-                                                            </div>
-                                                        </progress>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </section>
-						</div>
-					</section>
+    /* ── Nav ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(13,15,18,0.88); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 56px;
+    }
+    .nav-brand { font-size: 15px; font-weight: 600; letter-spacing: .03em; color: var(--text); }
+    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
+    .nav-links a { font-size: 13px; color: var(--muted); transition: color .2s; }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+    .nav-cta {
+      font-size: 13px; padding: 6px 14px; border-radius: 6px;
+      border: 1px solid var(--border2); color: var(--text);
+      background: transparent; cursor: pointer; transition: background .2s, border-color .2s;
+      font-family: inherit;
+    }
+    .nav-cta:hover { background: var(--bg3); border-color: var(--accent); }
 
-				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
-                        <div class="inner">
-                            <h3>def whoAmI(self, person=Daniel):</h3>
-                                <p><span class="image left"><img src="images/myFaceIfYouLook.jpg" alt="" /></span>I am the child of refugee parents who fled a war-torn country to America to survive and start a new life.  As they lost their old lives, they were given a chance to start anew, and were able to obtain advanced degrees in different fields.  They taught my sibling and me the importance of hard work and appreciation for everything we had, and to not take the opportunities that were provided for granted.  We were able to obtain an education here. I was successfully able to obtain a <strong>B.S. Degree from San Jose State University in Computer Engineering</strong>.  I worked on embedded projects, including a line following device and our senior project hand interface device.  I was fortunate to meet great colleagues along the way and attempted our first startup while we were there. </p>
-                                <section><span class="image right"><img src="images/Snow.jpg" alt="" /></span>I am dedicated and hardworking, always interested in learning new things. Here are a few of my hobbies:
-                                <ul>
-                                    <li>I love cars, and consider myself a basic mechanic (with the assistance of the Web)</li>
-                                    <li>Motorcycles and Cars! vroom vroom</li>
-                                    <li>Traveling when I can! </li>
-                                    <li>Making (linked) lists.  Only way to stay organized! </li>
-                                    <li>Snow sports!  I am also good at eating snow. </li>
-                                    <li>Learning new languages, and working on projects</li>
-                                    <li>Playing Guitar or DJing.  I can press buttons and stuff.</li>
-                                </ul></section>
-                        </div>
-					</section>
+    /* ── Hero ── */
+    #hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding: 96px 2rem 4rem; gap: 4rem;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .hero-text { flex: 1; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1.25rem;
+    }
+    .hero-eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 700;
+      line-height: 1.1; letter-spacing: -.02em; margin-bottom: .5rem;
+    }
+    .hero-sub {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 400;
+      color: var(--muted); margin-bottom: 1.5rem;
+    }
+    .hero-sub span { color: var(--accent); font-weight: 500; }
+    .hero-desc { font-size: 15px; color: var(--muted); max-width: 500px; line-height: 1.8; margin-bottom: 2rem; }
+    .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2rem; }
+    .chip {
+      font-size: 12px; padding: 4px 12px; border-radius: 999px;
+      border: 1px solid var(--border2); color: var(--muted);
+    }
+    .chip.av { border-color: rgba(79,142,247,.4); color: #7eb3fa; background: rgba(79,142,247,.08); }
+    .chip.re { border-color: rgba(45,212,160,.4); color: #5ee8c2; background: rgba(45,212,160,.08); }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      font-size: 14px; padding: 10px 22px; border-radius: 8px;
+      background: var(--accent); color: #fff; border: none; cursor: pointer;
+      font-weight: 500; font-family: inherit; transition: opacity .2s;
+    }
+    .btn-primary:hover { opacity: .85; }
+    .btn-ghost {
+      font-size: 14px; padding: 10px 22px; border-radius: 8px;
+      border: 1px solid var(--border2); color: var(--text); background: transparent;
+      cursor: pointer; font-family: inherit; transition: background .2s;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .btn-ghost:hover { background: var(--bg3); }
+    .hero-photo {
+      flex-shrink: 0; width: 280px; height: 320px; border-radius: 16px;
+      overflow: hidden; border: 1px solid var(--border2);
+    }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
 
-				<!-- Two -->
-					<section id="two" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>Work Experience</h2>
-							<p>Whether working on innovations or fine-tuning the instruments themselves, I am always up for the challenge</p>
-							<div class="features">
-								<section>
-									<span class="icon major fa-code"></span>
-									<h3>Apple Inc.{Current}</h3>
-									<p> Working on world class consumer products are both challenging and exciting!  I was able to work on different generations of Battery Products, validating the entire ecosystem to deliver cutting edge products.</p>
-                                    <p> Skills: Python, Hardware/Embedded Systems Validation, Basic Machine Learning</p>
-								</section>
-								<section>
-									<span class="icon major fa-code"></span>
-									<h3>Micron Technology </h3>
-                                    <p> As a Senior Firmware Validation Engineer, I was tasked with developing the Automated Validation Infrastructure using Python and Jenkins. I led a team in an Agile Scrum manner to thoroughly develop and test firmware, and test device functionality.</p>
-                                    <p> Skills: Python, C, Automation, Embedded Systems</p>
-								</section>
-								<section>
-									<span class="icon major fa-code"></span>
-									<h3>SanDisk</h3>
-                                    <p> Fresh out of college, I worked at SanDisk as a Firmware and Production Validation Engineer.  I learned about Nand Technology, and contributed to products used in client storage today.  I also worked on the framework that interfaced the drivers, test libraries, and firmware together.
-                                    wo of my best memories here were volunteering as a Lead Citizen Teacher as an ambassador for the SanDisk US2020 Program, and creating a team to participate in SanDisk’s first hackathon</p>
-                                    <p> Skills: C++, Python, Embedded Systems</p>
-								</section>
-								<section>
-									<span class="icon major fa-diamond"></span>
-									<h3>Entusic</h3>
-									<p>During our senior year, a few colleagues and I attempted our first startup. We were passionate, innovated, and thirsty to change the [world?] for the better. We came out with Enteric, a combination of entertainment and music. We wanted to deliver a platform where venues and artists come together. We were the architects of a dynamic web platform with thought to UI/UX, security, and databases. This was our first real attempt at delivering a user-friendly website.</p>
-                                    <p> Skills: HTML, CSS, Rails, PHP, Security</p>
-								</section>
-								<section>
-									<span class="icon major fa-desktop"></span>
-									<h3>Yahoo!</h3>
-									<p>I joined Yahoo! as an Advertising SEO Developer for my first internship. I used code and algorithms to crunch data, developing functional applications and dashboard interfaces for the team. By integrating Business Continuity Planning with the dashboard, I enabled cooperation with clients to effectively track Reimbursable/Non-Reimbursable records efficiently.</p>
-                                  	<p> Skills: HTML, PHP, JavaScript</p>
-								</section>
-								<section>
-								</section>
-							</div>
-						</div>
-					</section>
+    /* ── Shared section ── */
+    .section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: .5rem;
+    }
+    .section-title { font-size: 1.75rem; font-weight: 600; margin-bottom: 2.5rem; }
+    .divider { height: 1px; background: var(--border); }
 
-				<!-- Three -->
-					<section id="three" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Get in Touch</h2>
-							<p>Any questions? Am I applying for a job and you got a link to this website!</p>
-							<div class="split style1">
-								<section>
-									<form method="post" action="mailto:dandoan3@gmail.com" enctype="text/plain">
-										<div class="field half first">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="3"></textarea>
-										</div>
-										<ul class="actions">
-											<li><a href="" class="button submit">Contact Me</a></li>
-										</ul>
-									</form>
-								</section>
-								<section>
-									<ul class="contact">
-										<li>
-											<h3>Email</h3>
-											<a href="mailto:dandoan3@gmail">dandoan3@gmail.com</a></li>
-										<li>
-											<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="https://www.facebook.com/dandoan3" class="fa-facebook"><span class="label">Facebook</span></a></li>
-												<li><a href="https://github.com/DanDoan" class="fa-github"><span class="label">GitHub</span></a></li>
-												<li><a href="https://www.linkedin.com/in/dandoan3/" class="fa-linkedin"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
-                      	<li>&copy; danieldoan.org, All rights reserved.</li><li><a href="http://html5up.net">HTML5 Up</a></li>
-									</ul>
-								</section>
-							</div>
-						</div>
-					</section>
+    /* ── Timeline ── */
+    .timeline { display: flex; flex-direction: column; }
+    .exp-item {
+      display: grid; grid-template-columns: 160px 1fr;
+      gap: 0 2rem; position: relative; padding-bottom: 2.5rem;
+    }
+    .exp-item:last-child { padding-bottom: 0; }
+    .exp-item::before {
+      content: ''; position: absolute;
+      left: calc(160px + 2rem - 0.5px); top: 14px; bottom: 0;
+      width: 1px; background: var(--border);
+    }
+    .exp-item:last-child::before { display: none; }
+    .exp-date { font-size: 12px; color: var(--muted); padding-top: 5px; text-align: right; line-height: 1.6; }
+    .exp-body { padding-left: 2rem; position: relative; }
+    .exp-dot {
+      position: absolute; left: calc(2rem - 5px); top: 7px;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--bg); border: 2px solid var(--border2);
+    }
+    .exp-item.current .exp-dot { background: var(--accent); border-color: var(--accent); }
+    .exp-company {
+      font-size: 13px; color: var(--muted); margin-bottom: 3px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .current-pill {
+      font-size: 10px; padding: 2px 8px; border-radius: 999px;
+      background: rgba(79,142,247,.15); color: var(--accent);
+      border: 1px solid rgba(79,142,247,.3); font-weight: 500;
+    }
+    .exp-title { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+    .exp-desc { font-size: 14px; color: var(--muted); line-height: 1.75; max-width: 580px; }
+    .exp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .exp-tag {
+      font-size: 11px; padding: 2px 9px; border-radius: 4px;
+      background: var(--bg3); border: 1px solid var(--border); color: var(--muted);
+    }
 
-			</div>
+    /* ── Skills ── */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+    .skill-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 16px 18px; transition: border-color .2s;
+    }
+    .skill-card:hover { border-color: var(--border2); }
+    .skill-name { font-size: 13px; font-weight: 500; margin-bottom: 10px; }
+    .bar-bg { height: 3px; background: var(--bg3); border-radius: 2px; }
+    .bar { height: 3px; border-radius: 2px; background: var(--accent); }
+    .bar.g { background: var(--green); }
+    .skill-level { font-size: 11px; color: var(--muted); margin-top: 6px; }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+    /* ── Projects ── */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+    .proj-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 12px; padding: 22px 24px;
+      transition: border-color .2s, transform .2s;
+    }
+    .proj-card:hover { border-color: var(--border2); transform: translateY(-2px); }
+    .proj-card.feat { border-color: rgba(45,212,160,.25); }
+    .proj-card.feat:hover { border-color: rgba(45,212,160,.5); }
+    .proj-icon { font-size: 26px; margin-bottom: 12px; }
+    .proj-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+    .proj-desc { font-size: 13px; color: var(--muted); line-height: 1.75; margin-bottom: 12px; }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .proj-tag {
+      font-size: 11px; padding: 2px 8px; border-radius: 4px;
+      background: var(--bg3); border: 1px solid var(--border); color: var(--muted);
+    }
 
-	</body>
+    /* ── About ── */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .about-text { font-size: 15px; color: var(--muted); line-height: 1.8; }
+    .about-text p { margin-bottom: 1rem; }
+    .about-text strong { color: var(--text); font-weight: 500; }
+    .hobbies { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .hobbies li {
+      font-size: 14px; color: var(--muted); padding: 8px 12px;
+      background: var(--bg2); border: 1px solid var(--border); border-radius: 8px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .hobbies li::before { content: '→'; color: var(--accent); font-size: 12px; flex-shrink: 0; }
+
+    /* ── Contact ── */
+    .contact-wrap { max-width: 560px; margin: 0 auto; text-align: center; }
+    .contact-desc { font-size: 15px; color: var(--muted); margin-bottom: 2rem; line-height: 1.7; }
+    .contact-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .contact-link {
+      font-size: 14px; padding: 10px 20px; border-radius: 8px;
+      border: 1px solid var(--border2); color: var(--text);
+      display: flex; align-items: center; gap: 8px;
+      transition: background .2s, border-color .2s;
+    }
+    .contact-link:hover { background: var(--bg3); border-color: var(--accent); text-decoration: none; }
+    .contact-link svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border); padding: 2rem;
+      text-align: center; font-size: 12px; color: var(--muted);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      #hero { flex-direction: column-reverse; gap: 2rem; padding-top: 80px; min-height: auto; padding-bottom: 4rem; }
+      .hero-photo { width: 160px; height: 180px; }
+      .exp-item { grid-template-columns: 1fr; }
+      .exp-item::before { display: none; }
+      .exp-date { text-align: left; }
+      .exp-body { padding-left: 1rem; }
+      .exp-dot { left: 0; }
+      .about-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="nav-brand">Daniel Doan</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://www.linkedin.com/in/dandoan3/" target="_blank" rel="noopener">
+      <button class="nav-cta">LinkedIn ↗</button>
+    </a>
+  </nav>
+
+  <!-- Hero -->
+  <div style="max-width:1100px;margin:0 auto;">
+    <section id="hero">
+      <div class="hero-text">
+        <div class="hero-eyebrow">Engineering Manager · Autonomous Vehicles</div>
+        <h1>Daniel Doan</h1>
+        <p class="hero-sub">Engineering Manager at <span>Wayve</span></p>
+        <p class="hero-desc">
+          Building and leading firmware validation teams in the autonomous vehicle industry.
+          Over a decade shipping products at Apple, Cruise, and Zoox —
+          now managing the next generation of AV firmware at Wayve.
+        </p>
+        <div class="hero-chips">
+          <span class="chip av">Wayve · Autonomous Vehicles</span>
+          <span class="chip av">Cruise · Zoox · Apple</span>
+          <span class="chip re">RE Investor · Irving, TX</span>
+          <span class="chip">SJSU Computer Engineering</span>
+        </div>
+        <div class="hero-actions">
+          <a href="https://www.linkedin.com/in/dandoan3/" target="_blank" rel="noopener">
+            <button class="btn-primary">View LinkedIn ↗</button>
+          </a>
+          <a href="https://github.com/DanDoan" target="_blank" rel="noopener">
+            <button class="btn-ghost">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.604-3.369-1.341-3.369-1.341-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+              GitHub
+            </button>
+          </a>
+          <a href="mailto:dandoan3@gmail.com">
+            <button class="btn-ghost">Email</button>
+          </a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="images/profile.jpg" alt="Daniel Doan" />
+      </div>
+    </section>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="section-label">About</div>
+    <h2 class="section-title">Who I Am</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm the child of <strong>refugee parents</strong> who fled a war-torn country and rebuilt their lives in America — earning advanced degrees and instilling in me a deep appreciation for hard work and the opportunities we're given.</p>
+        <p>I earned a <strong>B.S. in Computer Engineering from San Jose State University</strong>, where my team won 2nd place at the Silicon Valley Innovation Challenge with a hand interface device.</p>
+        <p>Since then I've spent over a decade in firmware and validation — progressing from individual contributor to manager across <strong>Micron, SanDisk, Apple, Cruise, Zoox</strong>, and now <strong>Wayve</strong>, where I lead an engineering team building the future of autonomous vehicles.</p>
+        <p>Outside of work I'm a <strong>real estate investor</strong> — I built custom data analysis tools on top of live property management APIs to track occupancy, lease risk, and market trends across my DFW portfolio.</p>
+      </div>
+      <ul class="hobbies">
+        <li>Cars &amp; motorcycles — hands-on mechanic with a web connection</li>
+        <li>Traveling whenever possible</li>
+        <li>Snow sports (and eating snow)</li>
+        <li>Guitar &amp; DJing — "I can press buttons and stuff"</li>
+        <li>Building side projects &amp; learning new things</li>
+        <li>Making linked lists — the only way to stay organized</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Experience -->
+  <section id="experience" class="section">
+    <div class="section-label">Career</div>
+    <h2 class="section-title">Work Experience</h2>
+    <div class="timeline">
+
+      <div class="exp-item current">
+        <div class="exp-date">Apr 2026 – Present<br>3 mos</div>
+        <div class="exp-body">
+          <div class="exp-dot"></div>
+          <div class="exp-company">Wayve <span class="current-pill">Current</span></div>
+          <div class="exp-title">Engineering Manager</div>
+          <div class="exp-desc">Leading firmware validation engineering at one of the world's most ambitious autonomous vehicle companies. Managing team strategy, execution, and growth in a fast-moving AV environment.</div>
+          <div class="exp-tags">
+            <span class="exp-tag">Engineering Leadership</span>
+            <span class="exp-tag">Autonomous Vehicles</span>
+            <span class="exp-tag">Firmware Validation</span>
+            <span class="exp-tag">Team Management</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">Mar 2024 – Apr 2026<br>2 yrs 2 mos</div>
+        <div class="exp-body">
+          <div class="exp-dot"></div>
+          <div class="exp-company">Zoox (Amazon)</div>
+          <div class="exp-title">Firmware Validation Manager</div>
+          <div class="exp-desc">Managed firmware validation for Zoox's purpose-built robotaxi. Led a team through rigorous validation cycles covering safety-critical vehicle systems in a highly regulated AV environment.</div>
+          <div class="exp-tags">
+            <span class="exp-tag">Firmware Validation</span>
+            <span class="exp-tag">People Management</span>
+            <span class="exp-tag">Safety-Critical Systems</span>
+            <span class="exp-tag">Robotaxi</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">Nov 2021 – May 2024<br>2 yrs 7 mos</div>
+        <div class="exp-body">
+          <div class="exp-dot"></div>
+          <div class="exp-company">Cruise (GM)</div>
+          <div class="exp-title">Sr. Software Engineer in Test</div>
+          <div class="exp-desc">Senior SDET at GM's autonomous vehicle subsidiary. Built and owned test infrastructure for firmware and software systems on self-driving vehicles.</div>
+          <div class="exp-tags">
+            <span class="exp-tag">Python</span>
+            <span class="exp-tag">Test Infrastructure</span>
+            <span class="exp-tag">Autonomous Vehicles</span>
+            <span class="exp-tag">Embedded Systems</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">Jun 2017 – Nov 2021<br>4 yrs 6 mos · Cupertino</div>
+        <div class="exp-body">
+          <div class="exp-dot"></div>
+          <div class="exp-company">Apple</div>
+          <div class="exp-title">Engineer</div>
+          <div class="exp-desc">Worked on world-class consumer products — validating the entire battery ecosystem across multiple generations of Apple hardware. Exposure to machine learning for validation automation.</div>
+          <div class="exp-tags">
+            <span class="exp-tag">Python</span>
+            <span class="exp-tag">Embedded Systems</span>
+            <span class="exp-tag">Battery Products</span>
+            <span class="exp-tag">Hardware Validation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">Sep 2014 – Jun 2017<br>2 yrs 10 mos</div>
+        <div class="exp-body">
+          <div class="exp-dot"></div>
+          <div class="exp-company">Micron Technology</div>
+          <div class="exp-title">Sr. Firmware Test Engineer</div>
+          <div class="exp-desc">Developed automated validation infrastructure using Python and Jenkins. Led an Agile Scrum team to test firmware and device functionality for NAND storage products.</div>
+          <div class="exp-tags">
+            <span class="exp-tag">Python</span>
+            <span class="exp-tag">C</span>
+            <span class="exp-tag">Jenkins</span>
+            <span class="exp-tag">Agile / Scrum</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">2012 – 2014</div>
+        <div class="exp-body">
+          <div class="exp-dot"></div>
+          <div class="exp-company">SanDisk</div>
+          <div class="exp-title">Firmware &amp; Production Validation Engineer</div>
+          <div class="exp-desc">First role out of college. Built the framework interfacing drivers, test libraries, and firmware for client storage products. Volunteered as Lead Citizen Teacher (US2020 program). Co-led SanDisk's first hackathon team.</div>
+          <div class="exp-tags">
+            <span class="exp-tag">C++</span>
+            <span class="exp-tag">Python</span>
+            <span class="exp-tag">NAND</span>
+            <span class="exp-tag">Embedded</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">2011 – 2012</div>
+        <div class="exp-body">
+          <div class="exp-dot"></div>
+          <div class="exp-company">Yahoo! &amp; Entusic</div>
+          <div class="exp-title">Advertising SEO Developer · Startup Co-founder</div>
+          <div class="exp-desc">Interned at Yahoo! building dashboard interfaces for advertising SEO. Concurrently co-founded Entusic — an entertainment + music platform connecting venues and artists, built full-stack with Rails and PHP.</div>
+          <div class="exp-tags">
+            <span class="exp-tag">HTML / CSS</span>
+            <span class="exp-tag">PHP</span>
+            <span class="exp-tag">JavaScript</span>
+            <span class="exp-tag">Rails</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <div class="section-label">Expertise</div>
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-name">Engineering Leadership</div>
+        <div class="bar-bg"><div class="bar" style="width:92%"></div></div>
+        <div class="skill-level">Expert · Zoox + Wayve people management</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-name">Firmware Validation</div>
+        <div class="bar-bg"><div class="bar" style="width:92%"></div></div>
+        <div class="skill-level">Expert · AV, consumer hardware, storage</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-name">Python &amp; Automation</div>
+        <div class="bar-bg"><div class="bar" style="width:90%"></div></div>
+        <div class="skill-level">Expert · 10+ years across 5 companies</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-name">C / C++ / Embedded Systems</div>
+        <div class="bar-bg"><div class="bar" style="width:75%"></div></div>
+        <div class="skill-level">Proficient · Micron, SanDisk, SJSU</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-name">Data Analysis</div>
+        <div class="bar-bg"><div class="bar g" style="width:78%"></div></div>
+        <div class="skill-level">Proficient · pandas, matplotlib, FRED API</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-name">Real Estate Underwriting</div>
+        <div class="bar-bg"><div class="bar g" style="width:65%"></div></div>
+        <div class="skill-level">Growing · live API analysis · DFW market</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <div class="section-label">Projects</div>
+    <h2 class="section-title">Things I've Built</h2>
+    <div class="projects-grid">
+      <div class="proj-card feat">
+        <div class="proj-icon">🏠</div>
+        <div class="proj-title">Emerald Point RE Analysis</div>
+        <div class="proj-desc">Live real estate analytics built on the ResMan property management API and FRED macroeconomic data. Generates 9-chart PDF reports — occupancy, lease expiration risk, rent distribution, DFW market indicators. 76-unit property in Irving, TX at 90.8% occupancy.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Python</span>
+          <span class="proj-tag">ResMan API</span>
+          <span class="proj-tag">FRED API</span>
+          <span class="proj-tag">pandas</span>
+          <span class="proj-tag">matplotlib</span>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon">🤚</div>
+        <div class="proj-title">Hand Interface Device (HID)</div>
+        <div class="proj-desc">Non-intrusive glove interface prototyped as a senior project at SJSU. ARM920T interfaced with touchscreen, accelerometer, 4 flex sensors, and SD card. Won 2nd place at the Silicon Valley Innovation Challenge.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">ARM920T</span>
+          <span class="proj-tag">Embedded C</span>
+          <span class="proj-tag">Hardware</span>
+          <span class="proj-tag">SJSU 2011</span>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon">🎵</div>
+        <div class="proj-title">Entusic</div>
+        <div class="proj-desc">Co-founded a startup during senior year connecting venues and artists on a shared platform. Built the full-stack web app with attention to UI/UX, security, and database design.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Rails</span>
+          <span class="proj-tag">PHP</span>
+          <span class="proj-tag">MySQL</span>
+          <span class="proj-tag">Security</span>
+          <span class="proj-tag">Startup</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="contact-wrap">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="contact-desc">Open to conversations about autonomous vehicles, firmware engineering leadership, real estate investing, or anything interesting.</p>
+      <div class="contact-links">
+        <a href="mailto:dandoan3@gmail.com" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          Email
+        </a>
+        <a href="https://www.linkedin.com/in/dandoan3/" target="_blank" rel="noopener" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/DanDoan" target="_blank" rel="noopener" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.604-3.369-1.341-3.369-1.341-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Daniel Doan · danieldoan.org</p>
+  </footer>
+
+</body>
 </html>
